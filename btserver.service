@@ -1,0 +1,10 @@
+[Unit]
+Description=inicia servidor Bluetooth RFComm
+After=bluetooth.service
+
+[Service]
+ExecStart=/usr/bin/python /home/pi/hom/rfcomm-server-logger.py >/home/pi/hom/loga.log 2>&1 &
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
